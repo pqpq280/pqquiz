@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ----------------------------------------- */
+/* [LOCAL FONT DEFINITIONS]                  */
+/* ----------------------------------------- */
+
+/* 1. Galmuri 11 (한글 픽셀 폰트) */
+@font-face {
+  font-family: 'Galmuri11';
+  src: url('/fonts/Galmuri11.woff2') format('woff2'),
+       url('/fonts/Galmuri11.woff') format('woff'),
+       url('/fonts/Galmuri11.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 2. Press Start 2P (영문 픽셀 폰트) */
+@font-face {
+  font-family: 'Press Start 2P';
+  src: url('/fonts/PressStart2P-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ----------------------------------------- */
+/* [BASE STYLES]                             */
+/* ----------------------------------------- */
+
+*, ::before, ::after {
+  font-family: 'Galmuri11', sans-serif;
+}
+
+html, body {
+  font-family: 'Galmuri11', sans-serif !important;
+  background-color: #0a0a12;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@keyframes scan { 
+  0% { transform: translateY(-100%); } 
+  100% { transform: translateY(100%); } 
+}
+
+.animate-scan { 
+  animation: scan 4s linear infinite; 
+}
+
+.pixelated { 
+  image-rendering: pixelated; 
+}
+
+/* ----------------------------------------- */
+/* [SPECIFIC FONT CLASSES]                   */
+/* ----------------------------------------- */
+
+.font-game {
+  font-family: 'Galmuri11', sans-serif !important;
+}
+
+/* 한글 제목 볼드 효과 클래스 */
+.font-game-bold {
+  font-family: 'Galmuri11', sans-serif !important;
+  /* 텍스트 테두리를 추가하여 인위적으로 두껍게 만듭니다 (두께 조절 가능) */
+  -webkit-text-stroke: 0.5px currentColor;
+  font-weight: 700;
+}
+
+.font-eng {
+  font-family: 'Press Start 2P', cursive !important;
+  -webkit-font-smoothing: none !important;
+  -moz-osx-font-smoothing: unset !important;
+  font-smooth: never !important;
+  letter-spacing: 0 !important;
+  text-rendering: pixelated;
+}
