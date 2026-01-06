@@ -6,5 +6,6 @@ export default defineConfig({
   plugins: [
     react(),
     tailwindcss(), // 2. 여기에 추가
+	base: '/pqquiz/',
   ],
 })
